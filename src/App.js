@@ -4,7 +4,6 @@ import Start from './components/start/Start';
 import TotalCost from './components/totalCost/TotalCost';
 import Question from './components/question/Question';
 import { data } from './assets/data/data';
-import Greetings from './components/greetings/Greetings';
 
 let interval;
 
@@ -61,15 +60,12 @@ function App() {
                     step={step}
                   />
                 )}
-                {
-                  step === 3 && (
-                    <Greetings />
-                  )
-                }
+               
               </div>
               <div className="col-md-4 mt-5">
                 <TotalCost
                   step={step}
+                  answers={answers}
                   onReset={resetClickHandler}
                   totalCost={answers.reduce((sum, li) => sum + parseFloat(li.price), 0)}
                 />

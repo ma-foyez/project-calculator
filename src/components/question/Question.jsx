@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ProgressBar } from 'react-bootstrap';
 
-const Question = ({ data, step, answers, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep }) => {
+const Question = ({ data, answers, onAnswerUpdate, numberOfQuestions, activeQuestion, onSetActiveQuestion, onSetStep }) => {
 
     const [selected, setSelected] = useState('');
     const [error, setError] = useState('');
@@ -42,7 +42,7 @@ const Question = ({ data, step, answers, onAnswerUpdate, numberOfQuestions, acti
         if (activeQuestion < numberOfQuestions - 1) {
             onSetActiveQuestion(activeQuestion + 1);
         } else {
-            onSetStep(3);
+            onSetStep(2);
         }
     }
     const clickPreviousHandler = (e) => {
@@ -53,7 +53,7 @@ const Question = ({ data, step, answers, onAnswerUpdate, numberOfQuestions, acti
         if (activeQuestion < numberOfQuestions + 1) {
             onSetActiveQuestion(activeQuestion - 1);
         } else {
-            onSetStep(3);
+            onSetStep(2);
         }
     }
 
@@ -79,7 +79,7 @@ const Question = ({ data, step, answers, onAnswerUpdate, numberOfQuestions, acti
 
                         }
                         <ProgressBar variant="info" now={answers.length * 20} />
-                        <button className="mt-4 custom_brand_btn" onClick={nextClickHandler}>Next</button>
+                        <button className={answers.length > 4 ? "mt-4 disabled_btn" : "mt-4 custom_brand_btn"} disabled={answers.length > 4 && true} onClick={nextClickHandler}>Next</button>
                     </div>
                 </div>
             </div>

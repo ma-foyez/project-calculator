@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TotalCost = ({ step, totalCost, onReset }) => {
+const TotalCost = ({ step, totalCost, onReset , answers}) => {
 
     return (
         <div className="card text-center">
@@ -12,7 +12,7 @@ const TotalCost = ({ step, totalCost, onReset }) => {
                 )
             }
             {
-                step === 3 && (
+                answers.length > 4 && (
                     <React.Fragment>
                         <p className="text-primary">Est Cost</p>
                         <h4 className="price">${totalCost}</h4>
