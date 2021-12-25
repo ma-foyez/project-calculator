@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  background-color: #122033;
+  margin: 0;
+  padding: 0;
+  color: #ffff;
   min-height: 100vh;
+}
+
+
+.brand_title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 25px;
+}
+.custom_bg {
+  background-color: #ffff !important;
+  color: #122033 !important;
+  padding: 30px;
+  border-radius: 5px;
+}
+.border_light{
+  border-right: 1px solid #c7c7c7;
+}
+.question_content .question {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.question_content input[type="radio"] {
+  display: none;
+}
+.question_content .select_option {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  border: 1px solid #c7c7c7;
+  padding: 13px;
+  border-radius: 5px;
+}
+.question_content .valueIsActive {
+  border: 1px solid #0574cf !important;
+}
+.status_section{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.status_section .progress{
+  width: 70%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom_brand_btn{
+  background-color: #122033;
+  color: #ffff;
+  padding: 3px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin: 20px 5px;
 }
