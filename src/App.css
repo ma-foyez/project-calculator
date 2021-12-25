@@ -15,8 +15,15 @@
 .custom_bg {
   background-color: #ffff !important;
   color: #122033 !important;
-  padding: 30px;
+  padding: 20px;
   border-radius: 5px;
+}
+.contact_to_more{
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid #122033;
+  padding-bottom: 10px;
+  text-align: center;
 }
 .border_light{
   border-right: 1px solid #c7c7c7;

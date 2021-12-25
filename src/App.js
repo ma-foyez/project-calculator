@@ -45,34 +45,38 @@ function App() {
         {step === 1 && <Start onQuizStart={quizStartHandler} />}
         {
           step > 1 &&
-          <div className="row justify-content-center custom_bg">
-            <div className="col-md-8 border_light">
-              {step === 2 && (
-                <Question
-                  data={data[activeQuestion]}
-                  onAnswerUpdate={setAnswers}
-                  answers={answers}
-                  numberOfQuestions={data.length}
-                  activeQuestion={activeQuestion}
-                  onSetActiveQuestion={setActiveQuestion}
-                  onSetStep={setStep}
+          <div className="custom_bg">
+            <h6 className="contact_to_more">want to discuss your project in details? <a href="tel:+0056562656">schedule a call here</a></h6>
+            <div className="row justify-content-center">
+              <div className="col-md-8 border_light">
+                {step === 2 && (
+                  <Question
+                    data={data[activeQuestion]}
+                    onAnswerUpdate={setAnswers}
+                    answers={answers}
+                    numberOfQuestions={data.length}
+                    activeQuestion={activeQuestion}
+                    onSetActiveQuestion={setActiveQuestion}
+                    onSetStep={setStep}
+                    step={step}
+                  />
+                )}
+                {
+                  step === 3 && (
+                    <Greetings />
+                  )
+                }
+              </div>
+              <div className="col-md-4 mt-5">
+                <TotalCost
                   step={step}
+                  onReset={resetClickHandler}
+                  totalCost={answers.reduce((sum, li) => sum + parseFloat(li.price), 0)}
                 />
-              )}
-              {
-                step === 3 && (
-                  <Greetings />
-                )
-              }
-            </div>
-            <div className="col-md-4 mt-5">
-              <TotalCost
-                step={step}
-                onReset={resetClickHandler}
-                totalCost={answers.reduce((sum, li)=> sum + parseFloat(li.price), 0)}
-              />
+              </div>
             </div>
           </div>
+
         }
       </div>
     </div>
